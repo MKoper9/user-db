@@ -15,4 +15,13 @@
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>pl.sdacademy.userdb.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/showUsers</url-pattern>
+	</servlet-mapping>
+
 </web-app>

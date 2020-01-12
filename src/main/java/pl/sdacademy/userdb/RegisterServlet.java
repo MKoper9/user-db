@@ -28,6 +28,6 @@ public class RegisterServlet extends HttpServlet {
                 req.getParameter("lastName"),
                 req.getParameter("phoneNumber"));
         userRepository.save(user);
-        resp.sendRedirect("showUsers.html");
+        resp.sendRedirect("showUsers");
     }
 }
