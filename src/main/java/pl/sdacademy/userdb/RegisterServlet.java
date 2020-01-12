@@ -16,12 +16,18 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        req.getRequestDispatcher("registerUser.html").forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
-        new User(req.)
+        User user = new User(req.getParameter("login"),
+                req.getParameter("password"),
+                req.getParameter("confirmPassword"),
+                req.getParameter("name"),
+                req.getParameter("lastName"),
+                req.getParameter("phoneNumber"));
+        userRepository.save(user);
+        resp.sendRedirect("showUsers.html");
     }
 }
