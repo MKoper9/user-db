@@ -6,12 +6,41 @@
     <title>Users</title>
 </head>
 <body>
-<ol>
+<table>
+    <thead>
+        <tr>
+            <th>Login</th>
+            <th>Password</th>
+            <th>ConfirmPassword</th>
+            <th>Name</th>
+            <th>LastName</th>
+            <th>PhoneNumber</th>
+        </tr>
+    </thead>
+    <tbody>
     <c:forEach var="user" items="${users}">
-        <li>
-            <c:out value="${user.login}"/>
-        </li>
+        <tr>
+            <td>
+                <c:out value="${user.login}"/>
+            </td>
+            <td>
+                <c:out value="${user.password}"/>
+            </td>
+            <td>
+                <c:out value="${user.confirmPassword}"/>
+            </td>
+            <td>
+                <c:out value="${user.name}"/>
+            </td>
+            <td>
+                <c:out value="${user.lastName}"/>
+            </td>
+            <td>
+                 <c:out value="${user.phoneNumber}"/>
+            </td>
+        </tr>
     </c:forEach>
-</ol>
+    </tbody>
+</table>
 </body>
 </html>
