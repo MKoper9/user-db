@@ -11,7 +11,6 @@
         <tr>
             <th>Login</th>
             <th>Password</th>
-            <th>ConfirmPassword</th>
             <th>Name</th>
             <th>LastName</th>
             <th>PhoneNumber</th>
@@ -25,9 +24,6 @@
             </td>
             <td>
                 <c:out value="${user.password}"/>
-            </td>
-            <td>
-                <c:out value="${user.confirmPassword}"/>
             </td>
             <td>
                 <c:out value="${user.name}"/>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-Hello
+<a href = "/register">Register panel</a>
+<a href = "/showUsers">Show all users</a>
 </body>
 </html>
