@@ -4,7 +4,9 @@ public class UserValidator {
 
     public static void validate(User user, String confirmPassword) throws UserValidationException {
         try {
-            user.getPassword().equals(confirmPassword);
+            if(!user.getPassword().equals(confirmPassword)){
+                throw new UserValidationException("Password are not the same");
+            }
         } catch (NullPointerException e) {
             throw new UserValidationException("Passwords cannot be null", e);
         }
