@@ -1,7 +1,7 @@
-package pl.sdacademy.userdb;
+package pl.sdacademy;
 
 import org.apache.catalina.startup.Tomcat;
-import pl.sdacademy.userdb.tomcat.EmbeddedTomcatFactory;
+import pl.sdacademy.tomcat.EmbeddedTomcatFactory;
 
 public class Main {
     public static void main(String[] args) throws Exception {
