@@ -1,4 +1,4 @@
-package pl.sdacademy.userdb.tomcat;
+package pl.sdacademy.tomcat;
 
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.connector.Connector;
