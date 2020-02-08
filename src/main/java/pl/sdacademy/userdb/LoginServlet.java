@@ -26,16 +26,17 @@ public class LoginServlet extends HttpServlet {
 
         List<User> users = userRepository.getUsers();
 
-        boolean matchingUserFound = false;
+        User matchingUser = null;
         for (User user : users) {
             if (user.credentialsMatch(login, password)) {
-                createSession(user);
-                matchingUserFound = true;
+                matchingUser = user;
                 break;
             }
-        } if (matchingUserFound){
-            resp.sendRedirect("token-web");
-        }else {
+        }
+        if (matchingUser != null) {
+            String token = createSession(matchingUser);
+            resp.sendRedirect("token-web?token=" + token);
+        } else {
             resp.sendRedirect("login?error=true");
         }
 
@@ -54,12 +55,12 @@ public class LoginServlet extends HttpServlet {
         }
     }*/
 
-    private void createSession(User user) {
-        sessionService.createUserSession(user);
+    private String createSession(User user) {
+        return sessionService.createUserSession(user);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       req.getRequestDispatcher("login.jsp").forward(req, resp);
+        req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
 }

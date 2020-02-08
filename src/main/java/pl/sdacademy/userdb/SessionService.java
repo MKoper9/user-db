@@ -28,4 +28,8 @@ public class SessionService {
     private String generateSessionId() {
         return UUID.randomUUID().toString();
     }
+
+    public User getUser(String token) {
+        return session.get(token);
+    }
 }
