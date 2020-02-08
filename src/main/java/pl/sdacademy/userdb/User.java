@@ -16,4 +16,7 @@ public class User {
     private String lastName;
     private String phoneNumber;
 
+    public boolean credentialsMatch(String login, String password) {
+        return getLogin().equals(login) && getPassword().equals(password);
+    }
 }
