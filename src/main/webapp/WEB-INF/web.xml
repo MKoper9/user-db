@@ -24,4 +24,13 @@
 		<url-pattern>/showUsers</url-pattern>
 	</servlet-mapping>
 
+	<filter>
+		<filter-name>SecurityFilter</filter-name>
+		<filter-class>pl.sdacademy.userdb.SecuritySessionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/secured/*</url-pattern>
+	</filter-mapping>
+
 </web-app>

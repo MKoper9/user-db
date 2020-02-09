@@ -7,15 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/secret")
+@WebServlet("/secured/secret")
 public class SecretServlet extends HttpServlet {
 
-    private SessionService sessionService = SessionService.getInstance();
+//    private SessionService sessionService = SessionService.getInstance();
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String token = req.getParameter("token");
+
+        req.getRequestDispatcher("/secretWeb.jsp").forward(req, resp);
+
+  /*      String token = req.getParameter("token");
         User user = sessionService.getUser(token);
 
         if (user != null) {
@@ -23,6 +26,6 @@ public class SecretServlet extends HttpServlet {
             req.getRequestDispatcher("secretWeb.jsp").forward(req, resp);
         } else {
             resp.sendRedirect("login");
-        }
+        }*/
     }
 }
